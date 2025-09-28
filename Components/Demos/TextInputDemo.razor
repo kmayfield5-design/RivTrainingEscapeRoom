@@ -1,0 +1,32 @@
+﻿@rendermode InteractiveServer
+<br/>
+<h3>TextInputDemo component in Demos</h3>
+
+@if ( Result != null )
+{
+    <div class="alert alert-info">
+        You entered: @Result
+    </div>
+}
+<div class="row">
+    <div class="col">
+        Type something here: 
+    </div>
+    <div class="col">
+        <input type="text" @bind="inputText"
+            style="min-width:25em;"
+            />
+    </div>
+    <div class="col">
+        <button  @onclick="OnCheckInput">Check</button>
+    </div>
+</div>
+@code {
+    string inputText = string.Empty;
+    string? Result;
+
+    void OnCheckInput()
+    {
+        Result = inputText;
+    }
+}
