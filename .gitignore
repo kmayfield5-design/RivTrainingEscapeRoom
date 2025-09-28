@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Properties/PublishProfiles/RivTrainingEscapeRoom - Web Deploy.pubxml
+/bin/Debug/net9.0
+/bin/Release/net9.0
+/obj
+/.vs
+/Properties/PublishProfiles
