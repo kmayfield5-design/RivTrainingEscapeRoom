@@ -3,5 +3,7 @@
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
     <NameOfLastUsedPublishProfile>C:\Users\kmayf\source\repos\kmayfield5-design\RivTrainingEscapeRoom\Properties\PublishProfiles\RivTrainingEscapeRoom - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <Controller_SelectedScaffolderID>RazorComponentScaffolder</Controller_SelectedScaffolderID>
+    <Controller_SelectedScaffolderCategoryPath>root/Common/Blazor/RazorComponent</Controller_SelectedScaffolderCategoryPath>
   </PropertyGroup>
 </Project>

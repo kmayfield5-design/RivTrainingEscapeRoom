@@ -1,0 +1,46 @@
+﻿@rendermode InteractiveServer
+<br />
+<div class="boxed-text">
+<h3 class="passcode-title">Start the Escape</h3>
+    </div>
+@using Microsoft.AspNetCore.Components.Forms
+
+<div class="passcode-form-box">
+    <EditForm Model="@model" OnValidSubmit="HandleValidSubmit">
+        <InputText @bind-Value="model.Password" type="password" class="form-control" placeholder="Enter password" />
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        @if (isSubmitted)
+        {
+            <div class="mt-2">
+                @if (isAccepted)
+                {
+                    <span class="text-success">Password accepted!</span>
+                }
+                else
+                {
+                    <span class="text-danger">Incorrect password.</span>
+                }
+            </div>
+        }
+    </EditForm>
+</div>
+
+@code {
+    private PasswordModel model = new();
+    private bool isSubmitted = false;
+    private bool isAccepted = false;
+
+    // Set your accepted password here
+    private const string AcceptedPassword = "Riveronions";
+
+    private void HandleValidSubmit()
+    {
+        isSubmitted = true;
+        isAccepted = model.Password == AcceptedPassword;
+    }
+
+    public class PasswordModel
+    {
+        public string Password { get; set; } = string.Empty;
+    }
+}
