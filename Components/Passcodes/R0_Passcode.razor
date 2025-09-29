@@ -4,6 +4,7 @@
 <h3 class="passcode-title">Start the Escape</h3>
     </div>
 @using Microsoft.AspNetCore.Components.Forms
+@inject NavigationManager Navigation
 
 <div class="passcode-form-box">
     <EditForm Model="@model" OnValidSubmit="HandleValidSubmit">
@@ -37,6 +38,10 @@
     {
         isSubmitted = true;
         isAccepted = model.Password == AcceptedPassword;
+        if (isAccepted)
+        {
+            Navigation.NavigateTo("/Elevator"); // Change to your desired route
+        }
     }
 
     public class PasswordModel
