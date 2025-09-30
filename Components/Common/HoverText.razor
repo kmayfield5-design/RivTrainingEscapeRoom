@@ -1,0 +1,36 @@
+﻿@rendermode InteractiveServer
+
+<div class="content d-flex align-items-end">
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-primary" title="Read Me" @onmouseover="@OnMouseOver"
+                    @onmouseleave="@OnMouseLeave">
+                @ButtonText
+            </button>
+        </div>
+        @if (ShowHidden)
+        {
+                <div class="col bg-primary h4 text-white">
+                    @RevealText
+                </div>
+        }
+    </div>
+  </div>
+
+@code {
+    [Parameter, EditorRequired]
+    public string ButtonText { get; set; } = "Click me";
+    [Parameter, EditorRequired]
+    public string RevealText { get; set; } = "Popover";
+    bool ShowHidden = false;
+    void OnMouseOver()
+    {
+        ShowHidden = true;
+        StateHasChanged();
+    }
+    void OnMouseLeave()
+    {
+        ShowHidden = false;
+        StateHasChanged();
+    }
+}
